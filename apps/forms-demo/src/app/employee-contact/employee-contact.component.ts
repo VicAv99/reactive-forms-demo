@@ -9,18 +9,14 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 export class EmployeeContactComponent implements OnInit {
   form!: FormGroup;
 
-  // get addressArray() {
-  //   return this.form.get('addresses') as FormArray;
-  // }
+  get addressArray() {
+    return this.form.get('addresses') as FormArray;
+  }
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      // ...
-      primaryAddress: this.addressGroup(),
-      secondaryAddress: this.addressGroup(),
-    });
+    this.initForm();
   }
 
   // ngOnInit(): void {
@@ -30,20 +26,31 @@ export class EmployeeContactComponent implements OnInit {
   //   });
   // }
 
-  // addAddress() {
-  //   this.addressArray.push(this.addressGroup());
-  // }
+  addAddress() {
+    this.addressArray.push(this.addressGroup());
+  }
 
-  // removeAddress(i: number) {
-  //   this.addressArray.removeAt(i);
-  // }
+  removeAddress(i: number) {
+    this.addressArray.removeAt(i);
+  }
+
+  private initForm() {
+    this.form = this.formBuilder.group({
+      employeeFirstName: [''],
+      employeeLastName: [''],
+      employeeOrganization: [''],
+      addresses: this.formBuilder.array([this.addressGroup()]),
+      // primaryAddress: this.addressGroup(),
+      // secondaryAddress: this.addressGroup(),
+    });
+  }
 
   private addressGroup() {
     return this.formBuilder.group({
-      address: [],
-      city: [],
-      state: [],
-      zip: [],
+      address: [''],
+      city: [''],
+      state: [''],
+      zip: [''],
     });
   }
 }

@@ -2,47 +2,79 @@
   <mat-card-content>
     <mat-form-field appearance="outline">
       <mat-label>Employee First Name</mat-label>
-      <input matInput placeholder="Employee First Name">
+      <input matInput placeholder="Employee First Name" formControlName='employeeFirstName'>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Employee Last Name</mat-label>
-      <input matInput placeholder="Employee Last Name">
+      <input matInput placeholder="Employee Last Name" formControlName='employeeLastName'>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Organization</mat-label>
-      <input matInput placeholder="Organization">
+      <input matInput placeholder="Organization" formControlName='employeeOrganization'>
     </mat-form-field>
 
-    <div formGroupName="primaryAddress">
+    <!-- <div formGroupName="primaryAddress">
+                                  <h3>Primary</h3>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>Address</mat-label>
+                                    <input matInput placeholder="Address" formControlName='address'>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>City</mat-label>
+                                    <input matInput placeholder="City" formControlName='city'>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>State</mat-label>
+                                    <input matInput placeholder="State" formControlName='state'>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>ZIP/Postal Code</mat-label>
+                                    <input matInput placeholder="ZIP/Postal Code" formControlName='zip'>
+                                  </mat-form-field>
+                                </div> -->
 
-    </div>
+    <!-- <div formGroupName="secondaryAddress">
+                                  <h3>Secondary</h3>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>Address</mat-label>
+                                    <input matInput placeholder="Address" formControlName='address'>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>City</mat-label>
+                                    <input matInput placeholder="City" formControlName='city'>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>State</mat-label>
+                                    <input matInput placeholder="State" formControlName='state'>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline">
+                                    <mat-label>ZIP/Postal Code</mat-label>
+                                    <input matInput placeholder="ZIP/Postal Code" formControlName='zip'>
+                                  </mat-form-field>
+                                </div> -->
 
-    <div formGroupName="secondaryAddress">
-
-    </div>
-
-    <!-- <div formArrayName="addresses">
-      <div *ngFor="let address of addressArray.controls; let i = index">
+    <div formArrayName="addresses">
+      <div *ngFor="let address of addressArray.controls; let i = index" [formGroupName]="i">
         <mat-form-field appearance="outline">
           <mat-label>Address</mat-label>
-          <input matInput placeholder="Address">
+          <input matInput placeholder="Address" formControlName='address'>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>City</mat-label>
-          <input matInput placeholder="City">
+          <input matInput placeholder="City" formControlName='city'>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>State</mat-label>
-          <input matInput placeholder="State">
+          <input matInput placeholder="State" formControlName='state'>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>ZIP</mat-label>
-          <input matInput placeholder="ZIP">
+          <input matInput placeholder="ZIP" formControlName='zip'>
         </mat-form-field>
         <button mat-raised-button color="warn" (click)="removeAddress(i)">Remove Address</button>
       </div>
     </div>
-    <button mat-raised-button color="accent" (click)="addAddress()">Add Address</button> -->
+    <button mat-raised-button color="accent" (click)="addAddress()">Add Address</button>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="accent">Clear</button>
