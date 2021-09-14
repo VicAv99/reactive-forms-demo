@@ -26,5 +26,13 @@
       }
     ]
   },
-  "projects": {}
+  "projects": {
+    "forms-demo": {
+      "tags": []
+    },
+    "forms-demo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["forms-demo"]
+    }
+  }
 }
