@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { AppComponent } from './app.component';
 import { EmployeeContactComponent } from './employee-contact/employee-contact.component';
+import { ErrorKeysPipe } from './login/error-keys.pipe';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material.module';
 
@@ -15,6 +16,7 @@ import { MaterialModule } from './material.module';
     LoginComponent,
     AboutMeComponent,
     EmployeeContactComponent,
+    ErrorKeysPipe,
   ],
   imports: [
     BrowserModule,
