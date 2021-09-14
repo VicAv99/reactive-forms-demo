@@ -1,1 +1,22 @@
-<p>about-me works!</p>
+<mat-card-content>
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="What is your name?">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>About Me</mat-label>
+    <textarea matInput placeholder="Write something about yourself..."></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Dev Stack</mat-label>
+    <mat-select multiple>
+      <mat-option value="front-end">Front End</mat-option>
+      <mat-option value="back-end">Back End</mat-option>
+      <mat-option value="full">Full</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card-content>
+<mat-card-actions>
+  <button mat-raised-button color="accent">Clear</button>
+  <button mat-raised-button color="primary">Submit</button>
+</mat-card-actions>
